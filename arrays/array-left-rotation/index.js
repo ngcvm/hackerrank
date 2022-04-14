@@ -1,15 +1,14 @@
 function rotLeft(a, d) {
     // Write your code here
-    const returnArr = [];
-    const arrLength = a.length;
-    for (let i = 0; i < arrLength; i++) {
-        let afterRotationIndex = d;
-        if ((i + d) > (arrLength - 1)) {
-            afterRotationIndex = (i + d) - arrLength;
-        }
-        returnArr[i] = a[afterRotationIndex];
-    }
-    return returnArr;
+    let result = [];
+    // First number after rotation.
+    result.push(a[d]);
+    // First half array before first number
+    const firstHalfArr = a.slice(0, d);
+    // Second half array after first number
+    const secondHalfArr = a.slice(d + 1, a.length);
+    result = [...result, ...secondHalfArr, ...firstHalfArr];
+    return result;
 }
 
 

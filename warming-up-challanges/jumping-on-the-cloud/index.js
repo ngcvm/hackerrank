@@ -1,7 +1,6 @@
 function jumpingOnClouds(c) {
     // Write your code here
     let total = 0;
-    let lastStep = 0;
     let index = 0;
 
     while (index < c.length - 1) {
